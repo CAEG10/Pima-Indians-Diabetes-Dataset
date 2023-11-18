@@ -1,3 +1,4 @@
+[core]
+    remote = myremote
 ['remote "myremote"']
     url = gdrive://19G8bkrByBQL0Xx0GCJdlQ228_OJNVECT
-    gdrive_service_account_json_file_path = creds.json
