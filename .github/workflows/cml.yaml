@@ -1,0 +1,28 @@
+name: Diabetes-Model-Training
+
+on: [push]
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: iterative/setup-cml@v1
+
+      - uses: iterative/setup-dvc@v1
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Train Model
+        run: |
+          pip install -r requirements.txt
+          dvc pull
+          python train.py
+
+      - name: Report
+        run: |
+          dvc metrics diff --show-md master >> report.md
+          cml comment create --pr --publish report.md
