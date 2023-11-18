@@ -10,13 +10,12 @@ jobs:
       - name: Pull data with DVC
         run: |
           dvc pull
-      - name: Train model
+      - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          python train.py
-      - name: Pull data with DVC
+      - name: Train model
         run: |
-          dvc pull -r myremote          
+          python train.py
       - name: Create CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
