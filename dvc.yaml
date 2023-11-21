@@ -8,5 +8,5 @@ stages:
     - metrics.txt:
         cache: false
     plots:
-    - plots.png:  # Si estás generando 'plots.png' desde tu script
+    - plots.png:  
         cache: false
