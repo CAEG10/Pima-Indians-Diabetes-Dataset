@@ -28,13 +28,13 @@ predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 
 # Guardar métricas en un archivo de texto
-metrics = {"accuracy": accuracy}
-with open('metrics.json', 'w') as f:
-    json.dump(metrics, f)
-# with open('metrics.txt', 'w') as f:
-#     f.write(f'Accuracy: {accuracy}\n')
-#     f.write('\n')
-#     f.write(classification_report(y_test, predictions))
+# metrics = {"accuracy": accuracy}
+# with open('metrics.json', 'w') as f:
+#     json.dump(metrics, f)
+with open('metrics.txt', 'w') as f:
+    f.write(f'Accuracy: {accuracy}\n')
+    f.write('\n')
+    f.write(classification_report(y_test, predictions))
 
 # Generar y guardar la matriz de confusión
 cm = confusion_matrix(y_test, predictions)

@@ -1,11 +1,11 @@
 stages:
   mystage:
-    cmd: python train.py
+    cmd: python3 train.py
     deps:
     - data
     - train.py
     metrics:
-    - metrics.json:
+    - metrics.txt:
         cache: false
     plots:
     - plots.png:  
