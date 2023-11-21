@@ -40,7 +40,7 @@ sns.heatmap(cm, annot=True, fmt='g')
 plt.title('Confusion Matrix')
 plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
-plt.savefig('plot.png')
+plt.savefig('plots.png')
 
 # Guardar el modelo
 joblib.dump(model, 'diabetes_model.pkl')

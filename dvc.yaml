@@ -5,8 +5,8 @@ stages:
     - data
     - train.py
     metrics:
-    - metrics.json:
+    - metrics.txt:
         cache: false
     plots:
-    - loss.csv:
+    - plots.png:  # Si estás generando 'plots.png' desde tu script
         cache: false
