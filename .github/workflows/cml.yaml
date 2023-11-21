@@ -32,12 +32,12 @@ jobs:
           dvc repro
 
           # Use DVC metrics diff to compare metrics to master
-          git fetch --prune --unshallow
-          dvc metrics diff master >> report.md || echo "DVC metrics diff failed" >> report.md
+          #git fetch --prune --unshallow
+          #dvc metrics diff master >> report.md || echo "DVC metrics diff failed" >> report.md
 
           # Add figure to report
-          dvc plots diff --target loss.csv --show-vega master > vega.json || echo "DVC plots diff failed"
-          vl2png vega.json -s 1.3 > vega.png || echo "Failed to convert Vega plot to PNG"
+          #dvc plots diff --target loss.csv --show-vega master > vega.json || echo "DVC plots diff failed"
+          #vl2png vega.json -s 1.3 > vega.png || echo "Failed to convert Vega plot to PNG"
           echo '![](./plots.png)' >> report.md
           cml comment create --pr --publish report.md
 
