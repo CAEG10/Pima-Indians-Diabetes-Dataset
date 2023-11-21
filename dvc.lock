@@ -10,13 +10,13 @@ stages:
       nfiles: 1
     - path: train.py
       hash: md5
-      md5: 3b0512f31b97c11a00419fa5bdc6b6e0
-      size: 1612
+      md5: 34e50faed78ddacd803f01bfc2541aeb
+      size: 1729
     outs:
-    - path: metrics.txt
+    - path: metrics.json
       hash: md5
-      md5: 8cc375e7d16c668beb1dbca365662cbd
-      size: 366
+      md5: bb053055a4da42884cb0a17e36794358
+      size: 32
     - path: plots.png
       hash: md5
       md5: 222f6e0c070391443ec5852c1ffd0eb6

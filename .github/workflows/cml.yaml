@@ -30,7 +30,7 @@ jobs:
 
           # Reproduce pipeline if any changes detected in dependencies
           dvc repro
-          
+          echo '![](./metrics.json)' >> report.md
           echo '![](./plots.png)' >> report.md
           cml comment create --pr --publish report.md
 

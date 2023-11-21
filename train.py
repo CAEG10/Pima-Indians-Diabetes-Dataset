@@ -6,7 +6,7 @@ from sklearn.model_selection import cross_val_score
 import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
-
+import json
 # Cargar datos
 #file_path = r'D:\Taller\CML\Pima-Indians-Diabetes-Dataset\data\diabetes.csv'
 file_path = 'data/diabetes.csv'
@@ -28,10 +28,13 @@ predictions = model.predict(X_test)
 accuracy = accuracy_score(y_test, predictions)
 
 # Guardar métricas en un archivo de texto
-with open('metrics.txt', 'w') as f:
-    f.write(f'Accuracy: {accuracy}\n')
-    f.write('\n')
-    f.write(classification_report(y_test, predictions))
+metrics = {"accuracy": accuracy}
+with open('metrics.json', 'w') as f:
+    json.dump(metrics, f)
+# with open('metrics.txt', 'w') as f:
+#     f.write(f'Accuracy: {accuracy}\n')
+#     f.write('\n')
+#     f.write(classification_report(y_test, predictions))
 
 # Generar y guardar la matriz de confusión
 cm = confusion_matrix(y_test, predictions)
@@ -46,5 +49,5 @@ plt.savefig('plots.png')
 joblib.dump(model, 'diabetes_model.pkl')
 
 # Validación cruzada
-scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
-print(f"Cross-validated accuracy: {scores.mean()}")
+#scores = cross_val_score(model, X, y, cv=5, scoring='accuracy')
+#print(f"Cross-validated accuracy: {scores.mean()}")
