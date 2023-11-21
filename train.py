@@ -9,7 +9,7 @@ import joblib
 import json
 # Cargar datos
 #file_path = r'D:\Taller\CML\Pima-Indians-Diabetes-Dataset\data\diabetes.csv'
-file_path = 'data/diabetes.csv'
+file_path = 'diabetes.csv'
 data = pd.read_csv(file_path)
 
 # Separar características y etiqueta
