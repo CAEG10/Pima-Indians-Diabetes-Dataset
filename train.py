@@ -20,7 +20,7 @@ y = data['Outcome']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Entrenar el modelo RandomForest
-model = RandomForestClassifier(n_estimators=110, random_state=123)
+model = RandomForestClassifier(n_estimators=200, random_state=123)
 model.fit(X_train, y_train)
 
 # Predecir y evaluar el modelo
